@@ -1,0 +1,27 @@
+local TextChatService = game:GetService("TextChatService")
+local Players = game:GetService("Players")
+
+local function sendMessage(message)
+    local player = Players.LocalPlayer
+    if player then
+        local chatChannel = TextChatService.TextChannels.RBXGeneral
+        pcall(function()
+            chatChannel:SendAsync(message, player)
+        end)
+    end
+end
+
+local function sendMessages()
+    sendMessage("Loading Minutes..")
+    
+    wait(2)
+    
+    sendMessage("Fully Loaded 100%")
+    
+    wait(2)
+    
+    sendMessage("Join /prr59Y8JsU")
+end
+
+sendMessages()
+
